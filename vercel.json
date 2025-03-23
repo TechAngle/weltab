@@ -1,14 +1,14 @@
 {
     "builds": [
       {
-        "src": "src/index.tsx",
-        "use": "@vercel/solid-start"
+        "src": "vite.config.ts", 
+        "use": "@vercel/static-build"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/src/$1"
+        "dest": "/index.html"
       }
     ]
   }
