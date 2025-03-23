@@ -1,0 +1,58 @@
+.browsers-list {
+  display: flex;
+  gap: 8px;
+}
+
+.error-text::before {
+  content: "ERROR: ";
+  color: #f76f6f
+}
+
+h3 {
+  padding: 10px;
+}
+
+* {
+  user-select: none;
+}
+
+.browser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 250px;
+  height: 300px;
+  gap: 15px;
+  font-size: 24px;
+  background: radial-gradient(rgba(0, 0, 0, 0.664) 20%, rgba(36, 36, 36, 0.014));
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  border: 2px solid rgb(210, 210, 210);
+  border-radius: 10px;
+  box-shadow: rgb(187, 187, 187) 0px 20px 30px -10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.browser:hover {
+  z-index: 1;
+  scale: 1.2;
+  margin-right: 15px;
+  margin-left: 15px;
+  filter: brightness(1.0);
+  border: 3px solid rgb(210, 210, 210);
+  box-shadow: rgb(187, 187, 187) 0px 20px 30px -10px,
+  inset rgb(187, 187, 187) 0px 0px 30px -10px;;
+}
+
+.browser:not(:hover) {
+  filter: brightness(0.8);
+  z-index: 0;
+}
+
+.browsers-list:has(.browser:hover) .browser:not(:hover) {
+  filter: brightness(0.3);
+  z-index: 0;
+  perspective: 500px;
+}
