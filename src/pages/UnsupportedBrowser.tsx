@@ -28,6 +28,7 @@ export default function UnsupportedBrowser() {
           {(browser) => (
             <div
               class="browser"
+              onclick={() => document.location = browser.url}
             >
               <browser.icon size={64} />
               <span>{browser.name}</span>

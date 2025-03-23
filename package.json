@@ -15,6 +15,7 @@
     "solid-transition-group": "^0.3.0",
     "typescript": "^5.7.2",
     "vite": "^6.0.0",
+    "vite-plugin-history": "^1.0.2",
     "vite-plugin-solid": "^2.11.6",
     "vite-plugin-solid-svg": "^0.8.1",
     "vite-plugin-svgr": "^4.3.0"

@@ -1,5 +1,3 @@
-"client"
-
 import { Component, createSignal, JSXElement, onCleanup } from "solid-js";
 import "./Clock.scss"
 

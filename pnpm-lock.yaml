@@ -30,6 +30,9 @@ importers:
       vite:
         specifier: ^6.0.0
         version: 6.0.0(sass@1.81.0)
+      vite-plugin-history:
+        specifier: ^1.0.2
+        version: 1.0.2
       vite-plugin-solid:
         specifier: ^2.11.6
         version: 2.11.6(solid-js@1.9.5)(vite@6.0.0(sass@1.81.0))
@@ -658,6 +661,10 @@ packages:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
 
+  connect-history-api-fallback@1.6.0:
+    resolution: {integrity: sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg==}
+    engines: {node: '>=0.8'}
+
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
@@ -986,6 +993,9 @@ packages:
 
   validate-html-nesting@1.2.2:
     resolution: {integrity: sha512-hGdgQozCsQJMyfK5urgFcWEqsSSrK63Awe0t/IMR0bZ0QMtnuaiHzThW81guu3qx9abLi99NEuiaN6P9gVYsNg==}
+
+  vite-plugin-history@1.0.2:
+    resolution: {integrity: sha512-SYJyiF+zmMO1Aanx51+cnWKPQx4Oxpg1CKGzTEzr2sREzY7hdOnw2hcp3gDDdZh7jzze/hNsYvMGrur+3Otxiw==}
 
   vite-plugin-solid-svg@0.8.1:
     resolution: {integrity: sha512-ROGC2ae1eYUCMd+zfJtsbUtuZwsb6DZS0+Sy5/ZXDokOunGi0Ez/cL7OPdsixN3I0/rNYd/3hilo3kpRMAS+IA==}
@@ -1586,6 +1596,8 @@ snapshots:
 
   commander@7.2.0: {}
 
+  connect-history-api-fallback@1.6.0: {}
+
   convert-source-map@2.0.0: {}
 
   cosmiconfig@8.3.6(typescript@5.7.2):
@@ -1922,6 +1934,10 @@ snapshots:
       picocolors: 1.1.1
 
   validate-html-nesting@1.2.2: {}
+
+  vite-plugin-history@1.0.2:
+    dependencies:
+      connect-history-api-fallback: 1.6.0
 
   vite-plugin-solid-svg@0.8.1(solid-js@1.9.5)(vite@6.0.0(sass@1.81.0)):
     dependencies:
