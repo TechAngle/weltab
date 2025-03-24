@@ -2,6 +2,7 @@ import { createSignal, For } from 'solid-js';
 import { SiBrave, SiOpera, SiGooglechrome } from 'solid-icons/si';
 import '../App.scss';
 import './UnsupportedBrowser.scss';
+import { useNavigate } from '@solidjs/router';
 
 interface SupportedBrowser {
   name: string;
@@ -16,9 +17,10 @@ const supportedBrowsers: SupportedBrowser[] = [
 ];
 
 export default function UnsupportedBrowser() {
+  const navigate = useNavigate();
   const isFirefox = /Firefox/i.test(navigator.userAgent);
   if (!isFirefox) 
-    document.location = "/";
+    navigate("/");
 
   return (
     <div class="container">
@@ -28,7 +30,7 @@ export default function UnsupportedBrowser() {
           {(browser) => (
             <div
               class="browser"
-              onclick={() => document.location = browser.url}
+              onclick={() => window.location.href = browser.url}
             >
               <browser.icon size={64} />
               <span>{browser.name}</span>

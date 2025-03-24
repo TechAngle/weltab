@@ -7,6 +7,7 @@ import { IconTemplate, IconTypes } from "solid-icons";
 import { OcSparklefill2 } from 'solid-icons/oc'
 import { CustomIcon } from "solid-icons";
 import IconGrok  from "../custom-icons/IconGrok";
+import { useNavigate } from "@solidjs/router";
 
 interface Site {
   name: string;
@@ -26,6 +27,8 @@ const servicesList: Site[] = [
 ];
 
 export default function Services() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div class="services">
@@ -35,7 +38,7 @@ export default function Services() {
           <For each={servicesList}>
             {site => {
               return (
-                <div class="service" onclick={() => document.location = site.address}>
+                <div class="service" onclick={() => window.location.href = site.address}>
                   <site.icon size={32} />
                   <span class="service-name">{site.name}</span>
                 </div>

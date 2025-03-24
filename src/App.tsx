@@ -8,22 +8,20 @@ import { Transition } from 'solid-transition-group';
 import Services from './components/Services';
 import Search from './components/Search';
 import LiveWallpaper from './components/LiveWallpaper';
+import { useNavigate } from '@solidjs/router';
 
 const App: Component = () => {
+  const navigate = useNavigate();
+
   // test for Mozilla
   const isFirefox = /Firefox/i.test(navigator.userAgent);
-  if (isFirefox) document.location = "unsupported-browser";
+  if (isFirefox) navigate("unsupported-browser");
 
   const [isLoadingScreen, setLoadScreenStatus] = createSignal(true);
   const [finishedLoading, setFinishedLoading] = createSignal(false);
 
-  setTimeout(() => {
-    setLoadScreenStatus(false);
-  }, 1500)
-
-  setTimeout(() => {
-    setFinishedLoading(true);
-  }, 100);
+  setTimeout(() => setLoadScreenStatus(false), 1500);
+  setTimeout(() => setFinishedLoading(true), 100);
   
   return (
     <>
