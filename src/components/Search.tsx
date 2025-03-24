@@ -92,7 +92,11 @@ export default function Search() {
               class="search-input-field"
               placeholder="Enter your query here"
               onInput={(e) => setQueryText(e.target.value)}
-              onKeyPress={() => goToSearch()}
+              onKeyPress={(e) => {
+                if (e.key === "Enter")
+                  // enter
+                  goToSearch();
+              }}
             />
           </div>
           <div class="search-button" onclick={() => goToSearch()}>
