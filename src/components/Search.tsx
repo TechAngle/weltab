@@ -86,15 +86,17 @@ export default function Search() {
             </div>
           </Show>
         </div>
-        <div class="search-field bottom-border">
-          <input
-            class="search-input-field"
-            placeholder="Enter your query here"
-            onInput={(e) => setQueryText(e.target.value)}
-          />
-        </div>
-        <div class="search-button" onclick={() => goToSearch()}>
-          <span class="search-button-text">Search</span>
+        <div class="search-field">
+          <div>
+            <input
+              class="search-input-field"
+              placeholder="Enter your query here"
+              onInput={(e) => setQueryText(e.target.value)}
+            />
+          </div>
+          <div class="search-button" onclick={() => goToSearch()}>
+            <span class="search-button-text">Search</span>
+          </div>
         </div>
       </div>
     </>
