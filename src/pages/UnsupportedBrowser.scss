@@ -5,11 +5,11 @@
 
 .error-text::before {
   content: "ERROR: ";
-  color: #f76f6f
+  color: #f76f6f;
 }
 
 h3 {
-  padding: 10px;
+  padding: 20px;
 }
 
 * {
@@ -26,7 +26,10 @@ h3 {
   height: 300px;
   gap: 15px;
   font-size: 24px;
-  background: radial-gradient(rgba(0, 0, 0, 0.664) 20%, rgba(36, 36, 36, 0.014));
+  background: radial-gradient(
+    rgba(0, 0, 0, 0.664) 20%,
+    rgba(36, 36, 36, 0.014)
+  );
   backdrop-filter: blur(10px);
   cursor: pointer;
   border: 2px solid rgb(210, 210, 210);
@@ -40,10 +43,10 @@ h3 {
   scale: 1.2;
   margin-right: 15px;
   margin-left: 15px;
-  filter: brightness(1.0);
+  filter: brightness(1);
   border: 3px solid rgb(210, 210, 210);
   box-shadow: rgb(187, 187, 187) 0px 20px 30px -10px,
-  inset rgb(187, 187, 187) 0px 0px 30px -10px;;
+    inset rgb(187, 187, 187) 0px 0px 30px -10px;
 }
 
 .browser:not(:hover) {
