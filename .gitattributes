@@ -1,0 +1,3 @@
+src/**/*.scss linguist-vendored=true
+src/**/*.scss linguist-detectable=false
+src/**/*.scss linguist-documentation=false
