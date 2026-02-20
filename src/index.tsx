@@ -1,21 +1,24 @@
 /* @refresh reload */
-import { render } from 'solid-js/web';
-import { Route, Router } from '@solidjs/router';
-import UnsupportedBrowser from './pages/UnsupportedBrowser';
+import { render } from "solid-js/web";
+import { Route, Router } from "@solidjs/router";
+import UnsupportedBrowser from "./pages/UnsupportedBrowser";
 
-import App from './App';
+import App from "./App";
 
-const root = document.getElementById('root');
+const root = document.getElementById("root");
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error(
-    'Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got misspelled?',
+    "Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got misspelled?",
   );
 }
 
-render(() => (
-  <Router>
-    <Route path={"/"} component={App} />
-    <Route path={"/unsupported-browser"} component={UnsupportedBrowser} />
-  </Router>
-), document.getElementById("root"));
+render(
+  () => (
+    <Router>
+      <Route path={"/"} component={App} />
+      {/*<Route path={"/unsupported-browser"} component={UnsupportedBrowser} />*/}
+    </Router>
+  ),
+  document.getElementById("root"),
+);
