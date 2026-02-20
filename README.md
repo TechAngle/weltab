@@ -1,36 +1,23 @@
-## Usage
+# Weltab
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+## About it
+**Weltab** - A new tab page I developed for myself using *SolidJS*.
+I included most of websites that I use every day.
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+## How to use
+The easiest way to use it it to set **https://weltab.vercel.app/** as your **Homepage**.
+If you would like to use it as your *new page* every time - try to use **Custom New Tab Page**:
+- [Chrome](https://chromewebstore.google.com/detail/custom-new-tab-page/iimeokggigfllnihhakjkaeccbcijibe)
+- [Edge](https://microsoftedge.microsoft.com/addons/detail/custom-new-tab/onagfgjlokaciajhjmajljcfanonbmia)
+- [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/custom-new-tab-page/)
 
+## Development
 ```bash
-$ npm install # or pnpm install or yarn install
+# Clone repository
+git clone https://github.com/TechAngle/weltab
+cd weltab/
+
+npm install
+npm dev # For local development
+npm build # For production build
 ```
-
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run dev` or `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
-
-## This project was created with the [Solid CLI](https://solid-cli.netlify.app)
