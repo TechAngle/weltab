@@ -4,12 +4,8 @@ import { IconTypes } from "solid-icons";
 import { FaBrandsGoogle } from "solid-icons/fa";
 import { SiDuckduckgo, SiMicrosoftbing } from "solid-icons/si";
 import { Transition } from "solid-transition-group";
-
-interface SearchSystem {
-  name: string;
-  searchPattern: string; // replace {{request}} with query
-  icon: IconTypes;
-}
+import SearchSystemSelector from "./SearchSystemSelector";
+import { SearchSystem } from "../types/SearchSystem";
 
 const availableSearchSystems: SearchSystem[] = [
   {
@@ -17,11 +13,11 @@ const availableSearchSystems: SearchSystem[] = [
     searchPattern: "https://www.google.com/search?q={{request}}",
     icon: FaBrandsGoogle,
   },
-  {
-    name: "Bing",
-    searchPattern: "https://www.bing.com/search?q={{request}}",
-    icon: SiMicrosoftbing,
-  },
+  // {
+  //   name: "Bing",
+  //   searchPattern: "https://www.bing.com/search?q={{request}}",
+  //   icon: SiMicrosoftbing,
+  // },
   {
     name: "DDG",
     searchPattern: "https://duckduckgo.com/?t=h_&q={{request}}",
@@ -32,9 +28,8 @@ const availableSearchSystems: SearchSystem[] = [
 export default function Search() {
   const [queryText, setQueryText] = createSignal("");
   const [searchSystem, setSearchSystem] = createSignal(
-    availableSearchSystems[0]
+    availableSearchSystems[0],
   );
-  const [isSelectorOpen, setSelectorOpen] = createSignal(false);
 
   const goToSearch = () => {
     if (!queryText().trim())
@@ -45,47 +40,18 @@ export default function Search() {
 
     window.location.href = system.searchPattern.replace(
       "{{request}}",
-      encodeURI(queryText())
+      encodeURI(queryText()),
     );
-  };
-
-  const toggleDropdown = () => {
-    setSelectorOpen(!isSelectorOpen());
-  };
-
-  const selectSystem = (system: SearchSystem) => {
-    setSearchSystem(system);
-    setSelectorOpen(false); // Close the dropdown after selection
   };
 
   return (
     <>
       <div class="search">
-        <div class="search-system-selector">
-          <span onClick={toggleDropdown}>
-            {(() => {
-              const IconComponent = searchSystem().icon;
-              return <IconComponent size={20} />;
-            })()}
-          </span>
-          <Show when={isSelectorOpen()}>
-            <div
-              class={`search-system-list ${isSelectorOpen() ? "active" : ""}`}
-            >
-              <For each={availableSearchSystems}>
-                {(system) => (
-                  <div
-                    class="search-system"
-                    onClick={() => selectSystem(system)}
-                  >
-                    <system.icon size={20} />
-                    <span class="search-system-name">{system.name}</span>
-                  </div>
-                )}
-              </For>
-            </div>
-          </Show>
-        </div>
+        <SearchSystemSelector
+          setSearchSystem={setSearchSystem}
+          getSearchSystem={searchSystem}
+          searchSystemsList={availableSearchSystems}
+        />
         <div class="search-field">
           <div>
             <input

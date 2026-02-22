@@ -1,0 +1,103 @@
+@import "../global.scss";
+
+///////////// Seach System Selector
+.search-system-selector {
+    position: fixed;
+    display: flex;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.6em;
+    text-align: center;
+    z-index: 2;
+    top: 10px;
+    left: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    backdrop-filter: blur(20px);
+
+    & .search-system-preview {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    & .search-system-preview:hover {
+        transform: rotate(360deg);
+    }
+}
+
+.search-system-selector:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+}
+
+.search-system-list {
+    display: flex;
+    position: absolute;
+    background-color: rgba(23, 23, 23, $alpha: 0.4);
+    width: max-content;
+    box-shadow: $defaultBoxShadow;
+    padding: 12px 16px;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    border-radius: 12px;
+    pointer-events: none;
+    opacity: 0;
+    gap: 10px;
+    transform: translateX(-100%);
+    transition:
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+}
+
+.search-system-list.active {
+    opacity: 1;
+    transform: translateX(0);
+    backdrop-filter: blur(10px);
+    pointer-events: all;
+    animation: ease-in-out;
+}
+
+.search-system-list.inactive {
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+}
+
+.search-system {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease-in-out;
+
+    span {
+        color: #d1d1d1;
+        margin-left: 8px;
+        width: 0;
+        opacity: 0;
+        transition:
+            width 0.2s ease-in-out,
+            opacity 0.2s ease-in-out;
+    }
+
+    svg {
+        transition: transform 0.5s ease-in-out;
+    }
+
+    &:hover svg {
+        transform: rotate(-360deg);
+    }
+
+    &:hover {
+        background-color: rgba(88, 88, 88, 0.4);
+        span {
+            width: 100px;
+            opacity: 1;
+        }
+    }
+}
+
+/////////////

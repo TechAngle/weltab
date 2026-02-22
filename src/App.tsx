@@ -1,4 +1,5 @@
 import "./App.scss";
+import "./global.scss";
 import "./components/fade-animations.scss";
 
 import { Component, createSignal, Show } from "solid-js";
@@ -16,14 +17,14 @@ const App: Component = () => {
   const [isLoadingScreen, setLoadScreenStatus] = createSignal(true);
   const [finishedLoading, setFinishedLoading] = createSignal(false);
 
-  setTimeout(() => setLoadScreenStatus(false), 1500);
+  setTimeout(() => setLoadScreenStatus(false), 500);
   setTimeout(() => setFinishedLoading(true), 100);
 
   return (
     <>
-      {/* <Transition name="fade-out"  appear={true}>
+      <Transition name="fade-out" appear={true}>
         {isLoadingScreen() && <LoadScreen />}
-      </Transition> */}
+      </Transition>
       <LiveWallpaper />
       <Show when={finishedLoading()}>
         <Transition name="fade-in" appear={true}>

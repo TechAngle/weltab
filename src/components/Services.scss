@@ -1,136 +1,141 @@
 @use "sass:color";
-
-$serviceBack: rgba(77, 77, 77, 0.4);
-$defaultBoxShadow: rgba(0, 0, 0, 0.4) 0px 54px 55px,
-  rgba(0, 0, 0, 0.4) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+@import "../global.scss";
 
 .services {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border: 2px solid #e9e9e9;
-  border-radius: 30px;
-  margin: 30px;
-  background: linear-gradient(
-    rgba(0, 0, 0, $alpha: 0.35),
-    rgba(0, 0, 0, $alpha: 0.75)
-  );
-  backdrop-filter: blur(3px);
-  box-shadow: $defaultBoxShadow;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #e9e9e9;
+    border-radius: 30px;
+    margin: 30px;
+    background: linear-gradient(
+        rgba(0, 0, 0, $alpha: 0.35),
+        rgba(0, 0, 0, $alpha: 0.75)
+    );
+    backdrop-filter: blur(3px);
+    box-shadow: $defaultBoxShadow;
 }
 
 .services-text {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 .services-separator {
-  width: 100%;
+    width: 100%;
 }
 
 .services-list {
-  display: flex;
-  margin: 20px;
-  width: 100%;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap-reverse;
+    display: flex;
+    margin: 20px;
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap-reverse;
 }
 
 .service {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  background-color: $serviceBack;
-  color: #ddd;
-  width: fit-content;
-  min-width: 100px;
-  height: 80px;
-  padding: 8px;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  gap: 3px;
-  flex-direction: column;
-  transition: background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    color 0.2s cubic-bezier(0.075, 0.82, 0.165, 1), font-size 0.2s ease-in-out,
-    margin-right 0.2s ease-in-out, margin-left 0.2s ease-in-out,
-    transform 0.2s ease-in-out;
-  cursor: pointer;
-  font-size: 18px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: $serviceBack;
+    color: #ddd;
+    width: fit-content;
+    min-width: 100px;
+    height: 80px;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    gap: 3px;
+    flex-direction: column;
+    transition:
+        background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        color 0.2s cubic-bezier(0.075, 0.82, 0.165, 1),
+        font-size 0.2s ease-in-out,
+        margin-right 0.2s ease-in-out,
+        margin-left 0.2s ease-in-out,
+        transform 0.2s ease-in-out;
+    cursor: pointer;
+    font-size: 18px;
 }
 
 .service:hover {
-  background-color: color.scale($serviceBack, $lightness: 20%);
-  color: #fff;
-  font-size: 20px;
-  margin-right: 15px;
-  margin-left: 15px;
-  transform: translateY(-10px);
+    background-color: color.scale($serviceBack, $lightness: 20%);
+    color: #fff;
+    font-size: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+    transform: translateY(-10px);
 }
 
 .service-name {
-  text-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
 }
 
 /* Медиа-запрос для телефонов (ширина экрана до 768px) */
 @media (max-width: 940px) {
-  .services {
-    margin: 8px;
-    height: fit-content;
-  }
+    .services {
+        margin: 8px;
+        height: fit-content;
+    }
 
-  .services-text {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
+    .services-text {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
 
-  .services-list {
-    display: flex;
-    margin: 10px;
-    gap: 4px;
-    flex-wrap: wrap;
-  }
+    .services-list {
+        display: flex;
+        margin: 10px;
+        gap: 4px;
+        flex-wrap: wrap;
+    }
 
-  .service {
-    width: 30%;
-    min-width: auto;
-    height: auto;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px,
-      rgba(0, 0, 0, 0.12) 0px -2px 5px, rgba(0, 0, 0, 0.12) 0px 2px 4px,
-      rgba(0, 0, 0, 0.17) 0px 3px 5px, rgba(0, 0, 0, 0.09) 0px -1px 3px;
-    font-size: 16px;
-    margin: 5px;
-  }
+    .service {
+        width: 30%;
+        min-width: auto;
+        height: auto;
+        padding: 10px;
+        box-shadow:
+            rgba(0, 0, 0, 0.25) 0px 5px 15px,
+            rgba(0, 0, 0, 0.12) 0px -2px 5px,
+            rgba(0, 0, 0, 0.12) 0px 2px 4px,
+            rgba(0, 0, 0, 0.17) 0px 3px 5px,
+            rgba(0, 0, 0, 0.09) 0px -1px 3px;
+        font-size: 16px;
+        margin: 5px;
+    }
 
-  .service:hover {
-    font-size: 14px;
-    transform: translateY(-5px);
-  }
+    .service:hover {
+        font-size: 14px;
+        transform: translateY(-5px);
+    }
 
-  .service-name {
-    text-align: center;
-  }
+    .service-name {
+        text-align: center;
+    }
 }
 
 @media (max-width: 450px) {
-  .services-list {
-    height: 350px;
-  }
+    .services-list {
+        height: 350px;
+    }
 
-  .service {
-    height: auto;
-    width: 100px;
-  }
+    .service {
+        height: auto;
+        width: 100px;
+    }
 
-  svg {
-    width: 19px;
-    font-size: 16px;
-    height: auto;
-  }
+    svg {
+        width: 19px;
+        font-size: 16px;
+        height: auto;
+    }
 }
